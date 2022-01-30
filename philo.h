@@ -36,6 +36,7 @@ typedef struct s_data
 typedef struct s_philo
 {
 	int	id;
+	int last_meal;
 	pthread_t	thread;
 	t_data	*data;
 	pthread_mutex_t	*forks;

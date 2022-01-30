@@ -38,16 +38,80 @@ long int	get_time()
 	timestamp = (time.tv_sec * 1000) + (time.tv_usec / 1000);
 	return (timestamp);
 }
-
-long int	display(t_philo *philo, char *str, char *color)
+/*---------------------PB AVEC LE MUTEX DU DISPLAY-------------------*/
+long int	display(t_philo *philo, char *str)
 {
 	long int	actual_time;
 
 	actual_time = get_time();
-	pthread_mutex_lock(&philo->data->mutex);
+	// pthread_mutex_lock(&philo->data->mutex);
 	printf("%ld ms : philo %d %s\n", (actual_time - philo->data->start_time), philo->id, str);
-	pthread_mutex_unlock(&philo->data->mutex);
+	// pthread_mutex_unlock(&philo->data->mutex);
 	return (actual_time);
+}
+
+void	lock_forks(t_philo *philo, t_data *data)
+{
+	if (philo->id % 2 == 0)
+	{
+		pthread_mutex_lock(&philo->forks[philo->id % data->nb_of_philo]);
+		pthread_mutex_lock(&philo->forks[philo->id - 1]);
+	}
+	else
+	{
+		pthread_mutex_lock(&philo->forks[philo->id - 1]);
+		pthread_mutex_lock(&philo->forks[philo->id % data->nb_of_philo]);
+	}
+}
+
+void	unlock_forks(t_philo *philo, t_data *data)
+{
+	if (philo->id % 2 == 0)
+	{
+		pthread_mutex_unlock(&philo->forks[philo->id % data->nb_of_philo]);
+		pthread_mutex_unlock(&philo->forks[philo->id - 1]);
+	}
+	else
+	{
+		pthread_mutex_unlock(&philo->forks[philo->id - 1]);
+		pthread_mutex_unlock(&philo->forks[philo->id % data->nb_of_philo]);
+	}
+}
+
+void	handmade_usleep(long int timetosleep)
+{
+	long int start;
+	long int actual_time;
+	long int end;
+
+	start = get_time();
+	end = start + timetosleep;
+	while (1)
+	{
+		actual_time = get_time();
+		if (actual_time >= end)
+			break ;
+		usleep(100);
+	}
+}
+
+void	eat(t_philo *philo)
+{
+	long int	actual_time;
+
+	lock_forks(philo, philo->data);
+	display(philo, "took left fork");
+	display(philo, "took right fork");
+	actual_time = display(philo, "is eating");
+	philo->last_meal = actual_time;
+	handmade_usleep(philo->data->time_to_eat);
+	unlock_forks(philo, philo->data);
+}
+
+void	sleeep(t_philo *philo)
+{
+	display(philo, "is sleeping");
+	handmade_usleep(philo->data->time_to_sleep);
 }
 
 void    *routine(void *arg)
@@ -56,8 +120,8 @@ void    *routine(void *arg)
 
 	philo = *(t_philo *)arg;
 	pthread_mutex_lock(&philo.data->mutex);
-	printf("start time: %ld\n", philo.data->start_time);
-	printf("Thread %d created\n", philo.id);
+	eat(&philo);
+	sleeep(&philo);
 	pthread_mutex_unlock(&philo.data->mutex);
 	return (0);
 }
@@ -77,6 +141,7 @@ void    init_philo(t_data *data)
 		data->philo_lst[i].id = i + 1;
 		data->philo_lst[i].data = data;
 		data->philo_lst[i].forks = forks;
+		data->philo_lst[i].last_meal = 0;
 		pthread_mutex_init(&forks[i], NULL);
 		i++;
 	}
