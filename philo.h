@@ -28,15 +28,18 @@ typedef struct s_data
 	int		time_to_eat;
 	int		time_to_sleep;
 	int		nb_time_must_eat;
+	bool	is_dead;
 	bool	finished;
-	pthread_mutex_t	mutex;
+	pthread_mutex_t	print_mutex;
+	pthread_mutex_t	meal_mutex;
+	pthread_mutex_t	death_mutex;
 	struct s_philo	*philo_lst;
 }			t_data;
 
 typedef struct s_philo
 {
 	int	id;
-	int last_meal;
+	long int last_meal;
 	pthread_t	thread;
 	t_data	*data;
 	pthread_mutex_t	*forks;
