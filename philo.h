@@ -45,4 +45,6 @@ typedef struct s_philo
 	pthread_mutex_t	*forks;
 }           t_philo;
 
+void	check_philo_death(t_data *data);
+
 #endif
