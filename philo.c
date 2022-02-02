@@ -111,7 +111,7 @@ void	eat(t_philo *philo)
 	philo->last_meal = actual_time;
 	pthread_mutex_unlock(&philo->data->meal_mutex);
 	handmade_usleep(philo->data->time_to_eat);
-	
+
 	unlock_forks(philo, philo->data);
 }
 
@@ -242,7 +242,9 @@ void	kill_philo(t_data *data, long int actual_time, int i)
 	pthread_mutex_lock(&data->death_mutex);
 	data->is_dead = true;
 	pthread_mutex_unlock(&data->death_mutex);
+	pthread_mutex_lock(&data->print_mutex);
 	printf("%ld ms : philo %d died\n", (actual_time - data->start_time), data->philo_lst[i].id);
+	pthread_mutex_unlock(&data->print_mutex);
 }
 
 void	check_philo_death(t_data *data)
