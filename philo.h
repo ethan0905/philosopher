@@ -29,7 +29,6 @@ typedef struct s_data
 	int		time_to_sleep;
 	int		nb_time_must_eat;
 	bool	is_dead;
-	bool	finished;
 	pthread_mutex_t	print_mutex;
 	pthread_mutex_t	meal_mutex;
 	pthread_mutex_t	death_mutex;
