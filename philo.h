@@ -46,5 +46,6 @@ typedef struct s_philo
 }           t_philo;
 
 void	check_philo_death(t_data *data);
+int	is_alive(t_philo *philo);
 
 #endif
