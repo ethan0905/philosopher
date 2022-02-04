@@ -12,7 +12,19 @@
 
 NAME = philo
 
-SRCS = philo.c
+SRCS = ./srcs/philo.c \
+		./srcs/init_philo.c \
+		./srcs/routine.c \
+		./srcs/parsing.c \
+		./srcs/start_simulation.c \
+		./srcs/time_functions.c \
+		./srcs/print.c \
+		./srcs/forks.c \
+		./srcs/end_simulation.c \
+		./srcs/utils/ft_strlen.c \
+		./srcs/utils/ft_atoi.c \
+		./srcs/utils/ft_isdigit.c \
+
 GCC = cc
 FLAGS = -g -pthread -Wextra -Wall -Werror
 OBJS = ${SRCS:.c=.o}

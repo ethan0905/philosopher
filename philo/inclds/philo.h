@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <limits.h>
 
 typedef struct s_data
 {
@@ -45,9 +46,48 @@ typedef struct s_philo
 	pthread_mutex_t	*forks;
 }           t_philo;
 
-void	check_philo_death(t_data *data);
-void	check_philo_death_n_meals(t_data *data);
-int	endofmeal(t_data *data);
+/*--------Parsing---------*/
+int parsing(t_data *data, int ac, char **av);
+int check_errors(int ac, char **av);
+int	check_if_digit(int ac, char **av);
+int	check_if_int_are_valid(int ac, char **av);
+
+/*--------Initialize_philosophers---------*/
+void    init_philo(t_data *data);
+
+/*--------Start_simulation---------*/
+int	start(t_data *data);
+int	start_even_group(t_philo *philo_lst, int nb_philo);
+int start_odd_group(t_philo *philo_lst, int nb_philo);
+
+/*--------Routine---------*/
+void    *routine(void *arg);
+void	eat(t_philo *philo);
+void	sleep_and_think(t_philo *philo);
+void	eat_while_philo_need(t_philo *philo);
 int	is_alive(t_philo *philo);
+
+/*--------Print---------*/
+long int	display(t_philo *philo, char *str);
+
+/*--------Forks---------*/
+void	lock_forks(t_philo *philo, t_data *data);
+void	unlock_forks(t_philo *philo, t_data *data);
+
+/*--------Time_functions---------*/
+long int	get_time();
+void	handmade_usleep(long int timetosleep);
+
+/*--------End_simulation---------*/
+void	end(t_data *data);
+void	kill_philo(t_data *data, long int actual_time, int i);
+void	check_philo_death(t_data *data);
+int	endofmeal(t_data *data);
+void	check_philo_death_n_meals(t_data *data);
+
+/*--------Utils---------*/
+int	ft_atoi(const char *str);
+int	ft_isdigit(int c);
+size_t	ft_strlen(char const *str);
 
 #endif
