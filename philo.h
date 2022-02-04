@@ -38,6 +38,7 @@ typedef struct s_data
 typedef struct s_philo
 {
 	int	id;
+	int nb_meal;
 	long int last_meal;
 	pthread_t	thread;
 	t_data	*data;
@@ -45,6 +46,8 @@ typedef struct s_philo
 }           t_philo;
 
 void	check_philo_death(t_data *data);
+void	check_philo_death_n_meals(t_data *data);
+int	endofmeal(t_data *data);
 int	is_alive(t_philo *philo);
 
 #endif
