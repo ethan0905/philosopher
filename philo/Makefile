@@ -15,6 +15,7 @@ NAME = philo
 SRCS = ./srcs/philo.c \
 		./srcs/init_philo.c \
 		./srcs/routine.c \
+		./srcs/routine_norm.c \
 		./srcs/parsing.c \
 		./srcs/start_simulation.c \
 		./srcs/time_functions.c \

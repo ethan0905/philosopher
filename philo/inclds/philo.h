@@ -64,6 +64,7 @@ int start_odd_group(t_philo *philo_lst, int nb_philo);
 void    *routine(void *arg);
 void	eat(t_philo *philo);
 void	sleep_and_think(t_philo *philo);
+void	one_philo_eat(t_philo *philo);
 void	eat_while_philo_need(t_philo *philo);
 int	is_alive(t_philo *philo);
 
