@@ -16,16 +16,16 @@ void	end(t_data *data)
 {
 	int i;
 
+	pthread_mutex_destroy(&data->print_mutex);
 	i = 0;
 	while (i < data->nb_of_philo)
 	{
 		pthread_join(data->philo_lst[i].thread, NULL);
 		pthread_mutex_destroy(&data->philo_lst[i].forks[i]);
-		i++;
+		++i;
 	}
 	free(data->philo_lst->forks);
 	free(data->philo_lst);
-	pthread_mutex_destroy(&data->print_mutex);
 	pthread_mutex_destroy(&data->meal_mutex);
 	pthread_mutex_destroy(&data->death_mutex);
 	return ;
@@ -46,11 +46,10 @@ void	check_philo_death(t_data *data)
 	int	i;
 	long int actual_time;
 
-	// usleep(30000);
 	i = 0;
 	while (1)
 	{
-		actual_time = get_time() - 0;
+		actual_time = get_time();
 		pthread_mutex_lock(&data->meal_mutex);
 		if ((actual_time - data->philo_lst[i].last_meal) >= (long int)data->time_to_die)
 		{
@@ -86,7 +85,7 @@ void	check_philo_death_n_meals(t_data *data)
 	i = 0;
 	while (1 && endofmeal(data) == 1)
 	{
-		actual_time = get_time() - 0;
+		actual_time = get_time();
 		pthread_mutex_lock(&data->meal_mutex);
 		if (((actual_time - data->philo_lst[i].last_meal) >= (long int)data->time_to_die) && endofmeal(data) == 0)
 		{

@@ -31,14 +31,14 @@ void	eat(t_philo *philo)
 
 void	sleep_and_think(t_philo *philo)
 {
-	if (is_alive(philo) == 0)
-		return ;
+	// if (is_alive(philo) == 0)
+		// return ;
 	display(philo, "is sleeping");
 	handmade_usleep(philo->data->time_to_sleep);
-	if (is_alive(philo) == 0)
-		return ;
+	// if (is_alive(philo) == 0)
+	// 	return ;
 	display(philo, "is thinking");
-	usleep(100);
+	usleep(((philo->data->time_to_die - (philo->data->time_to_eat + philo->data->time_to_sleep)) / 2) * 1000);
 }
 
 int	is_alive(t_philo *philo)
@@ -57,26 +57,6 @@ int	is_alive(t_philo *philo)
 	pthread_mutex_unlock(&philo->data->death_mutex);
 	return (1);
 }
-
-// void	eat_while_philo_need(t_philo *philo)
-// {
-// 	while (is_alive(philo) == 1 && philo->nb_meal > 0)
-// 	{		
-// 		eat(philo);
-// 		if (philo->nb_meal > 0)
-// 			sleep_and_think(philo);
-// 	}
-// 	pthread_mutex_lock(&philo->data->meal_mutex);
-// 	philo->data->nb_time_must_eat--;
-// 	pthread_mutex_unlock(&philo->data->meal_mutex);
-// }
-
-// void	one_philo_eat(t_philo *philo)
-// {
-// 	display(philo, "has taken left fork");
-// 	usleep(philo->data->time_to_die * 1000);
-// 	printf("%ld ms : philo %d died\n", (get_time() - philo->data->start_time), philo->id);
-// }
 
 void    *routine(void *arg)
 {
