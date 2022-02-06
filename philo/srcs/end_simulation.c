@@ -14,7 +14,7 @@
 
 void	end(t_data *data)
 {
-	int i;
+	int	i;
 
 	pthread_mutex_destroy(&data->print_mutex);
 	i = 0;
@@ -22,7 +22,7 @@ void	end(t_data *data)
 	{
 		pthread_join(data->philo_lst[i].thread, NULL);
 		pthread_mutex_destroy(&data->philo_lst[i].forks[i]);
-		++i;
+		i++;
 	}
 	free(data->philo_lst->forks);
 	free(data->philo_lst);
@@ -43,8 +43,8 @@ void	kill_philo(t_data *data, long int actual_time, int i)
 
 void	check_philo_death(t_data *data)
 {
-	int	i;
-	long int actual_time;
+	int			i;
+	long int	actual_time;
 
 	i = 0;
 	while (1)
@@ -79,8 +79,8 @@ int	endofmeal(t_data *data)
 
 void	check_philo_death_n_meals(t_data *data)
 {
-	int	i;
-	long int actual_time;
+	int			i;
+	long int	actual_time;
 
 	i = 0;
 	while (1 && endofmeal(data) == 1)

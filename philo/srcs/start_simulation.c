@@ -14,7 +14,7 @@
 
 int	start_even_group(t_philo *philo_lst, int nb_philo)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < nb_philo)
@@ -26,9 +26,9 @@ int	start_even_group(t_philo *philo_lst, int nb_philo)
 	return (0);
 }
 
-int start_odd_group(t_philo *philo_lst, int nb_philo)
+int	start_odd_group(t_philo *philo_lst, int nb_philo)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < nb_philo)
@@ -52,5 +52,5 @@ int	start(t_data *data)
 		check_philo_death_n_meals(data);
 	else
 		check_philo_death(data);
-	return(1);
+	return (1);
 }

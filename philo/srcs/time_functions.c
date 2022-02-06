@@ -12,10 +12,10 @@
 
 #include "../inclds/philo.h"
 
-long int	get_time()
+long int	get_time(void)
 {
-	long int	timestamp;
-	struct timeval time;
+	long int		timestamp;
+	struct timeval	time;
 
 	timestamp = 0;
 	gettimeofday(&time, NULL);
@@ -25,9 +25,9 @@ long int	get_time()
 
 void	handmade_usleep(long int timetosleep)
 {
-	long int start;
-	long int actual_time;
-	long int end;
+	long int	start;
+	long int	actual_time;
+	long int	end;
 
 	start = get_time();
 	end = start + timetosleep;

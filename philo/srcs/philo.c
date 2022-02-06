@@ -12,9 +12,9 @@
 
 #include "../inclds/philo.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_data      data;
+	t_data	data;
 
 	if (ac == 5 || ac == 6)
 	{

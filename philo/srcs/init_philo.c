@@ -12,9 +12,9 @@
 
 #include "../inclds/philo.h"
 
-void    init_philo(t_data *data)
+void	init_philo(t_data *data)
 {
-	int i;
+	int				i;
 	pthread_mutex_t	*forks;
 
 	forks = malloc(sizeof(pthread_mutex_t) * data->nb_of_philo);

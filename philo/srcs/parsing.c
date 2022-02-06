@@ -14,8 +14,8 @@
 
 int	check_if_digit(int ac, char **av)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < ac - 1)
@@ -24,7 +24,7 @@ int	check_if_digit(int ac, char **av)
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-			{ 
+			{
 				printf("Error: use only digit caracters.\n");
 				return (0);
 			}
@@ -37,7 +37,7 @@ int	check_if_digit(int ac, char **av)
 
 int	check_if_int_are_valid(int ac, char **av)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < ac - 1)
@@ -57,7 +57,7 @@ int	check_if_int_are_valid(int ac, char **av)
 	return (1);
 }
 
-int check_errors(int ac, char **av)
+int	check_errors(int ac, char **av)
 {
 	if (check_if_digit(ac, av) == 0)
 		return (0);
@@ -71,7 +71,7 @@ int check_errors(int ac, char **av)
 	return (1);
 }
 
-int parsing(t_data *data, int ac, char **av)
+int	parsing(t_data *data, int ac, char **av)
 {
 	if (check_errors(ac, av) == 0)
 		return (0);

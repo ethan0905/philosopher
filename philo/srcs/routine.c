@@ -31,12 +31,12 @@ void	eat(t_philo *philo)
 
 void	sleep_and_think(t_philo *philo)
 {
-	// if (is_alive(philo) == 0)
-		// return ;
+	if (is_alive(philo) == 0)
+		return ;
 	display(philo, "is sleeping");
 	handmade_usleep(philo->data->time_to_sleep);
-	// if (is_alive(philo) == 0)
-	// 	return ;
+	if (is_alive(philo) == 0)
+		return ;
 	display(philo, "is thinking");
 	usleep(((philo->data->time_to_die - (philo->data->time_to_eat + philo->data->time_to_sleep)) / 2) * 1000);
 }
@@ -58,9 +58,9 @@ int	is_alive(t_philo *philo)
 	return (1);
 }
 
-void    *routine(void *arg)
+void	*routine(void *arg)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)arg;
 	if (philo->data->nb_of_philo == 1)

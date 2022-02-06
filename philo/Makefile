@@ -27,7 +27,7 @@ SRCS = ./srcs/philo.c \
 		./srcs/utils/ft_isdigit.c \
 
 GCC = cc
-FLAGS = -g -pthread -Wextra -Wall -Werror
+FLAGS = -g -pthread -Wextra -Wall -Werror #-fsanitize=thread
 OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
