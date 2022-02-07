@@ -6,7 +6,7 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:23:19 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:23:20 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 14:45:09 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	kill_philo(t_data *data, long int actual_time, int i)
 	data->is_dead = true;
 	pthread_mutex_unlock(&data->death_mutex);
 	pthread_mutex_lock(&data->print_mutex);
-	if (data->nb_of_philo != 1)
+	if (data->nb_of_philo > 1 && data->nb_time_must_eat >= 0)
 		printf("%ld ms : philo %d died\n", (actual_time - data->start_time), data->philo_lst[i].id);
 	pthread_mutex_unlock(&data->print_mutex);
 }
@@ -71,6 +71,7 @@ int	endofmeal(t_data *data)
 	pthread_mutex_lock(&data->meal_mutex);
 	if (data->nb_time_must_eat > 0)
 	{
+		// printf("dans checkphilodeath\n");
 		pthread_mutex_unlock(&data->meal_mutex);
 		return (0);
 	}
@@ -84,12 +85,14 @@ void	check_philo_death_n_meals(t_data *data)
 	long int	actual_time;
 
 	i = 0;
-	while (1 && endofmeal(data) == 1)
+	while (1 && endofmeal(data) == 0)
 	{
 		actual_time = get_time();
 		pthread_mutex_lock(&data->meal_mutex);
-		if (((actual_time - data->philo_lst[i].last_meal) >= (long int)data->time_to_die) && endofmeal(data) == 0)
+		if (((actual_time - data->philo_lst[i].last_meal) >= (long int)data->time_to_die)/* && endofmeal(data) == 1*/)
 		{
+			// printf("nb_time_must_eat : %d\n", data->nb_time_must_eat);
+			// printf("kill my philo\n");
 			pthread_mutex_unlock(&data->meal_mutex);
 			kill_philo(data, actual_time, i);
 			return ;
