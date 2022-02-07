@@ -47,9 +47,9 @@ int	check_if_int_are_valid(int ac, char **av)
 			printf("Error: int overflow.\n");
 			return (0);
 		}
-		if (ft_atoi(av[i]) < 0)
+		if (ft_atoi(av[i]) < 1)
 		{
-			printf("Error: negative argument(s).\n");
+			printf("Error: invalid amount of philosophers.\n");
 			return (0);
 		}
 		i++;
