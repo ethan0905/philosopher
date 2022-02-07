@@ -22,7 +22,7 @@ void	end(t_data *data)
 	{
 		pthread_join(data->philo_lst[i].thread, NULL);
 		pthread_mutex_destroy(&data->philo_lst[i].forks[i]);
-		i++;
+		++i;
 	}
 	free(data->philo_lst->forks);
 	free(data->philo_lst);
@@ -37,7 +37,8 @@ void	kill_philo(t_data *data, long int actual_time, int i)
 	data->is_dead = true;
 	pthread_mutex_unlock(&data->death_mutex);
 	pthread_mutex_lock(&data->print_mutex);
-	printf("%ld ms : philo %d died\n", (actual_time - data->start_time), data->philo_lst[i].id);
+	if (data->nb_of_philo != 1)
+		printf("%ld ms : philo %d died\n", (actual_time - data->start_time), data->philo_lst[i].id);
 	pthread_mutex_unlock(&data->print_mutex);
 }
 
