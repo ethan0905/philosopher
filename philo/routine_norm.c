@@ -28,9 +28,7 @@ void	eat_while_philo_need(t_philo *philo)
 void	one_philo_eat(t_philo *philo)
 {
 	display(philo, "has taken a fork");
-	// pthread_mutex_lock(&philo->data->print_mutex);
 	usleep(philo->data->time_to_die * 1000);
 	printf("%ld ms : philo %d died\n", (get_time() - \
 	philo->data->start_time), philo->id);
-	// pthread_mutex_unlock(&philo->data->print_mutex);
 }

@@ -6,7 +6,7 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:23:19 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/07 17:56:39 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/08 19:05:33 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,21 +73,9 @@ void	check_philo_death(t_data *data)
 	}
 }
 
-int	endofmeal(t_data *data)
-{
-	pthread_mutex_lock(&data->meal_mutex);
-	if (data->nb_time_must_eat > 0)
-	{
-		pthread_mutex_unlock(&data->meal_mutex);
-		return (0);
-	}
-	pthread_mutex_unlock(&data->meal_mutex);
-	return (1);
-}
-
 void	check_time_of_death(struct s_philo *philo)
 {
-	long int actual_time;
+	long int	actual_time;
 
 	actual_time = get_time();
 	pthread_mutex_lock(&philo->data->meal_mutex);
@@ -108,7 +96,6 @@ void	check_philo_death_n_meals(t_data *data)
 	{
 		actual_time = get_time();
 		pthread_mutex_lock(&data->meal_mutex);
-		// printf("NB_OF_TIME_MUST EAT: [%d] - [%d]\n", data->nb_time_must_eat, data->philo_lst[i].nb_meal);
 		if (data->nb_time_must_eat == 0)
 		{
 			pthread_mutex_unlock(&data->meal_mutex);
