@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 14:24:52 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:24:54 by esafar           ###   ########.fr       */
+/*   Created: 2021/05/20 12:12:57 by esafar            #+#    #+#             */
+/*   Updated: 2022/02/07 17:51:30 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
-long int	display(t_philo *philo, char *str)
+size_t	ft_strlen(char const *str)
 {
-	long int	actual_time;
+	size_t	i;
 
-	actual_time = get_time();
-	if (is_alive(philo) == 0)
-		return (0);
-	pthread_mutex_lock(&philo->data->print_mutex);
-	printf("%ld ms : philo %d %s\n", (actual_time - philo->data->start_time), philo->id, str);
-	pthread_mutex_unlock(&philo->data->print_mutex);
-	return (actual_time);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

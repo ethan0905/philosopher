@@ -6,11 +6,11 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:28:17 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:28:40 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:50:55 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
 void	lock_forks(t_philo *philo, t_data *data)
 {

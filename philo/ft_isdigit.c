@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:12:57 by esafar            #+#    #+#             */
-/*   Updated: 2021/06/04 09:26:47 by esafar           ###   ########.fr       */
+/*   Created: 2021/05/20 13:00:09 by esafar            #+#    #+#             */
+/*   Updated: 2022/02/07 17:51:19 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inclds/philo.h"
+#include "philo.h"
 
-size_t	ft_strlen(char const *str)
+int	ft_isdigit(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }

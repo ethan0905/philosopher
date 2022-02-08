@@ -6,11 +6,11 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:25:53 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:25:54 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:52:49 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
 long int	get_time(void)
 {

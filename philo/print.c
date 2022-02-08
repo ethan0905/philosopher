@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 15:50:06 by esafar            #+#    #+#             */
-/*   Updated: 2022/01/26 15:51:23 by esafar           ###   ########.fr       */
+/*   Created: 2022/02/04 14:24:52 by esafar            #+#    #+#             */
+/*   Updated: 2022/02/07 17:55:37 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
-int	main(int ac, char **av)
+long int	display(t_philo *philo, char *str)
 {
-	t_data	data;
+	long int	actual_time;
 
-	if (ac == 5 || ac == 6)
-	{
-		if (parsing(&data, ac, av) == 0)
-			return (-1);
-		init_philo(&data);
-		if (start(&data) == -1)
-			return (-1);
-		end(&data);
-	}
-	else
-		printf("Error: Wrong amount of arguments.");
-	return (0);
+	actual_time = get_time();
+	if (is_alive(philo) == 0)
+		return (0);
+	pthread_mutex_lock(&philo->data->print_mutex);
+	printf("%ld ms : philo %d %s\n", (actual_time - \
+	philo->data->start_time), philo->id, str);
+	pthread_mutex_unlock(&philo->data->print_mutex);
+	return (actual_time);
 }

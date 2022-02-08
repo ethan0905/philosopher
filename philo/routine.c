@@ -6,27 +6,29 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:18:13 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:18:14 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:53:40 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
 void	eat(t_philo *philo)
 {
 	long int	actual_time;
 
 	lock_forks(philo, philo->data);
-	display(philo, "took left fork");
-	display(philo, "took right fork");
+	display(philo, "has taken a fork");
+	display(philo, "has taken a fork");
 	pthread_mutex_lock(&philo->data->meal_mutex);
 	actual_time = display(philo, "is eating");
 	philo->last_meal = actual_time;
 	pthread_mutex_unlock(&philo->data->meal_mutex);
 	handmade_usleep(philo->data->time_to_eat);
 	unlock_forks(philo, philo->data);
+	pthread_mutex_lock(&philo->data->meal_mutex);
 	if (philo->nb_meal > 0)
 		philo->nb_meal--;
+	pthread_mutex_unlock(&philo->data->meal_mutex);
 }
 
 void	sleep_and_think(t_philo *philo)
@@ -38,7 +40,8 @@ void	sleep_and_think(t_philo *philo)
 	if (is_alive(philo) == 0)
 		return ;
 	display(philo, "is thinking");
-	usleep(((philo->data->time_to_die - (philo->data->time_to_eat + philo->data->time_to_sleep)) / 2) * 1000);
+	usleep(((philo->data->time_to_die - (philo->data->time_to_eat \
+	+ philo->data->time_to_sleep)) / 2) * 1000);
 }
 
 int	is_alive(t_philo *philo)

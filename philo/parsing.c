@@ -6,11 +6,11 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:19:48 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:19:50 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:54:34 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
 int	check_if_digit(int ac, char **av)
 {
@@ -65,7 +65,8 @@ int	check_errors(int ac, char **av)
 		return (0);
 	if (ac == 6 && ft_atoi(av[5]) < 1)
 	{
-		printf("Error: <number of time each philosopher must eat> must be > 0.\n");
+		printf("Error: <number of time each philosopher \
+		must eat> must be > 0.\n");
 		return (0);
 	}
 	return (1);

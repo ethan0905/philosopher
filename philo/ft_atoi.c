@@ -6,15 +6,16 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:53:24 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:32:05 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:54:00 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inclds/philo.h"
+#include "philo.h"
 
 static int	ft_isspace(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\v' || c == '\n' || c == '\f' || c == '\r')
+	if (c == ' ' || c == '\t' || c == '\v' || \
+	c == '\n' || c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }

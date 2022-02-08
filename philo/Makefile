@@ -6,25 +6,25 @@
 #    By: esafar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 17:04:03 by esafar            #+#    #+#              #
-#    Updated: 2022/02/07 15:45:45 by esafar           ###   ########.fr        #
+#    Updated: 2022/02/08 17:15:28 by esafar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-SRCS = ./srcs/philo.c \
-		./srcs/init_philo.c \
-		./srcs/routine.c \
-		./srcs/routine_norm.c \
-		./srcs/parsing.c \
-		./srcs/start_simulation.c \
-		./srcs/time_functions.c \
-		./srcs/print.c \
-		./srcs/forks.c \
-		./srcs/end_simulation.c \
-		./srcs/utils/ft_strlen.c \
-		./srcs/utils/ft_atoi.c \
-		./srcs/utils/ft_isdigit.c \
+SRCS = ./philo.c \
+		./init_philo.c \
+		./routine.c \
+		./routine_norm.c \
+		./parsing.c \
+		./start_simulation.c \
+		./time_functions.c \
+		./print.c \
+		./forks.c \
+		./end_simulation.c \
+		./ft_strlen.c \
+		./ft_atoi.c \
+		./ft_isdigit.c \
 
 GCC = cc
 FLAGS = -g -pthread -Wextra -Wall -Werror #-fsanitize=thread

@@ -6,11 +6,11 @@
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:27:27 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/04 14:27:28 by esafar           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:51:42 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inclds/philo.h"
+#include "philo.h"
 
 void	init_philo(t_data *data)
 {
@@ -32,4 +32,5 @@ void	init_philo(t_data *data)
 		pthread_mutex_init(&data->philo_lst[i].forks[i], NULL);
 		i++;
 	}
+	data->nb_time_must_eat = data->nb_of_philo;
 }
