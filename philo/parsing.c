@@ -18,7 +18,7 @@ int	check_if_digit(int ac, char **av)
 	int	j;
 
 	i = 1;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j])
@@ -40,7 +40,7 @@ int	check_if_int_are_valid(int ac, char **av)
 	int	i;
 
 	i = 1;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_strlen(av[i]) > 11)
 		{
