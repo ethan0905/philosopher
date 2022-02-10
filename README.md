@@ -12,7 +12,7 @@ make
 ```
 Then start a simulation using:
 ```
-./philo <nb_philo> <time_to_die> <time_to_eat> <time_to_sleep> <nb_of_time_each_philo_must_eat>
+./philo <nb_philo> <time_to_die> <time_to_eat> <time_to_sleep> <nb_of_time_each_philo_must_eat> //last argument is facultative
 ```
 
 ## Tricky tests
