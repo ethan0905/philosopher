@@ -42,3 +42,8 @@ fclean:
 	rm -f ${OBJS} ${NAME}
 
 re:	fclean all
+
+%.o: %.c ${INCL}
+	${GCC} ${FLAGS} -c $< -o ${<:.c=.o}
+
+.PHONY: all clean fclean re
