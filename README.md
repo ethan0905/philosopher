@@ -5,7 +5,7 @@ philosopher takes their right and their left forks to eat, one in each hand. Whe
 
 ###### Read more [here](https://cdn.intra.42.fr/pdf/pdf/41343/en.subject.pdf)
 
-![alt text](https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers)
+<p algin=center> ![alt text](https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers) </p>
 
 ## How to execute the code?
 Compile using:
