@@ -27,3 +27,9 @@ Then start a simulation using:
 | ./philo 4 310 200 100  | A philosopher should die! |
 | ./philo 5 800 200 150  | No one should die! |
 | ./philo 3 610 200 80  | No one should die! |
+
+## Data races
+To check data races, go into your Makefile and use *-fsanitize=thread* when you compile. You can either check them using:
+```
+valgrind --tool=helgrind ./philo arg1 arg2 arg3 arg4
+```
