@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: c2h6 <c2h6@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:44:38 by esafar            #+#    #+#             */
-/*   Updated: 2021/12/27 18:44:42 by esafar           ###   ########.fr       */
+/*   Updated: 2022/07/27 10:32:06 by c2h6             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <limits.h>
+
+# define malloc(...) NULL //in order to test malloc fails
 
 typedef struct s_data
 {
@@ -53,7 +55,7 @@ int		check_if_digit(int ac, char **av);
 int		check_if_int_are_valid(int ac, char **av);
 
 /*--------Initialize_philosophers---------*/
-void	init_philo(t_data *data);
+int		init_philo(t_data *data);
 
 /*--------Start_simulation---------*/
 int		start(t_data *data);

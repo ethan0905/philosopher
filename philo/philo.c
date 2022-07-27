@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: c2h6 <c2h6@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:50:06 by esafar            #+#    #+#             */
-/*   Updated: 2022/02/07 17:51:56 by esafar           ###   ########.fr       */
+/*   Updated: 2022/07/27 10:02:16 by c2h6             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(int ac, char **av)
 	{
 		if (parsing(&data, ac, av) == 0)
 			return (-1);
-		init_philo(&data);
+		if (init_philo(&data) == -1)
+			return (-1);
 		if (start(&data) == -1)
 			return (-1);
 		end(&data);
