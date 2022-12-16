@@ -1,7 +1,12 @@
 # philosopher 👥 [![esafar's 42 Philosophers Score](https://badge42.vercel.app/api/v2/cl6l739qg00490gialxmtgsrk/project/2464664)](https://github.com/JaeSeoKim/badge42)
 
-<p align="center"> <img width="300" height="300" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
+<p align="center"> <img width="300" height="auto" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
 
+> Philosophers are sitting around a table where there is a large bowl of spaghetti in the middle. They all bring their own fork.
+> * **They can alternatively eat, think, or sleep.** But in order to eat, they need to use 2 forks.*
+> 
+> In a multi-threading manner, you gonna find a way to **prevent any philosopher from dying.**
+  
 ## 📔 Summary
 
  - [📚 Subject](#-subject)
