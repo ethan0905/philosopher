@@ -18,13 +18,13 @@ philosopher takes their right and their left forks to eat, one in each hand. Whe
 ## ❗️ Tricky tests
 | TEST | How philosopher should react |
 | ------------- | ------------- |
-| ./philo 1 800 200 200 | The philosopher should not eat and should die! |
-| ./philo 5 800 200 200  | No one should die! |
-| ./philo 5 800 200 200 7 | No one should die and the simulation should stop when all the philosophers has eaten at least 7 times each |
-| ./philo 4 410 200 200 | No one should die! |
-| ./philo 4 310 200 100  | A philosopher should die! |
-| ./philo 5 800 200 150  | No one should die! |
-| ./philo 3 610 200 80  | No one should die! |
+| `./philo 1 800 200 200` | The philosopher should not eat and should die! |
+| `./philo 5 800 200 200`  | No one should die! |
+| `./philo 5 800 200 200 7` | No one should die and the simulation should stop when all the philosophers has eaten at least 7 times each |
+| `./philo 4 410 200 200` | No one should die! |
+| `./philo 4 310 200 100`  | A philosopher should die! |
+| `./philo 5 800 200 150`  | No one should die! |
+| `./philo 3 610 200 80`  | No one should die! |
 
 ## ⚙️ How to run the project ?
 Compile using:
