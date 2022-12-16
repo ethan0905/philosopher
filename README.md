@@ -1,13 +1,13 @@
 # philosopher 👥 [![esafar's 42 Philosophers Score](https://badge42.vercel.app/api/v2/cl6l739qg00490gialxmtgsrk/project/2464664)](https://github.com/JaeSeoKim/badge42)
 
-<p align="left"> <img width="400" height="400" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
+<p align="center"> <img width="300" height="300" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
 
 ## 📔 Summary
 
- - [📚 Subject](#-containersalgorithmiterators)
- - [❗️ Tricky tests](#%EF%B8%8F-potential-mistakes-)
+ - [📚 Subject](#-subject)
+ - [❗️ Tricky tests](#%EF%B8%8F-tricky-tests)
  - [⚙️ How to run the project ?](#%EF%B8%8F-how-to-run-the-project-)
- - [🗃️ Data races](#%EF%B8%8F-usefull-documentation)
+ - [🗃️ Data races](#%%EF%B8%8F-data-races)
   
 ## 📚 Subject
 One or more philosophers are sitting around a table where there is a large bowl of spaghetti. They alternatively eat, think, or sleep. While they are eating, they are not thinking nor sleeping; while thinking, they are not eating nor sleeping; and, of course, while sleeping, they are not eating nor thinking. In order to eat, each philosopher bring his fork with him at the beginning of the simulation. Because serving and eating spaghetti with only one fork is very inconvenient, a
