@@ -3,7 +3,7 @@
 <p align="center"> <img width="300" height="auto" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
 
 > Philosophers are sitting around a table where there is a large bowl of spaghetti in the middle. They all bring their own fork.
-> **They can alternatively eat, think, or sleep.** * But in order to eat, they need to use 2 forks. *
+> **They can alternatively eat, think, or sleep.** But in order to eat, they need to use 2 forks.
 > 
 > In a multi-threading manner, you gonna find a way to **prevent any philosopher from dying.**
   
