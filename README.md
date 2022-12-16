@@ -28,16 +28,16 @@ philosopher takes their right and their left forks to eat, one in each hand. Whe
 
 ## ⚙️ How to run the project ?
 Compile using:
-```
+````shell
 make
-```
+````
 Then start a simulation using:
-```
+````shell
 ./philo <nb_philo> <time_to_die> <time_to_eat> <time_to_sleep> <nb_of_time_each_philo_must_eat> //last argument is facultative
-```  
+````  
 
 ## 🗃️ Data races
 To check data races, go into your Makefile and use *-fsanitize=thread* when you compile. You can either check them using:
-```
+````shell
 valgrind --tool=helgrind ./philo arg1 arg2 arg3 arg4
-```
+````
