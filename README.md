@@ -6,19 +6,13 @@
 > **They can alternatively eat, think, or sleep.** But in order to eat, they need to use 2 forks.
 > 
 > In a multi-threading manner, you gonna find a way to **prevent any philosopher from dying.**
+> Read more [here](https://cdn.intra.42.fr/pdf/pdf/41343/en.subject.pdf)
   
 ## 📔 Summary
 
- - [📚 Subject](#-subject)
  - [❗️ Tricky tests](#%EF%B8%8F-tricky-tests)
  - [⚙️ How to run the project ?](#%EF%B8%8F-how-to-run-the-project-)
  - [🗃️ Data races](#%%EF%B8%8F-data-races)
-  
-## 📚 Subject
-One or more philosophers are sitting around a table where there is a large bowl of spaghetti. They alternatively eat, think, or sleep. While they are eating, they are not thinking nor sleeping; while thinking, they are not eating nor sleeping; and, of course, while sleeping, they are not eating nor thinking. In order to eat, each philosopher bring his fork with him at the beginning of the simulation. Because serving and eating spaghetti with only one fork is very inconvenient, a
-philosopher takes their right and their left forks to eat, one in each hand. When a philosopher has finished eating, they put their forks back on the table and start sleeping. Once awake, they start thinking again. The simulation stops when a philosopher dies of starvation. Every philosopher needs to eat and should never starve. Philosophers don’t speak with each other. Philosophers don’t know if another philosopher is about to die.
-
-###### Read more [here](https://cdn.intra.42.fr/pdf/pdf/41343/en.subject.pdf)
 
 ## ❗️ Tricky tests
 | TEST | How philosopher should react |
