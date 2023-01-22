@@ -25,6 +25,21 @@
 | `./philo 5 800 200 150`  | No one should die! |
 | `./philo 3 610 200 80`  | No one should die! |
 
+If for the last 2 tests, you have philo dying, it means that you are still missing something in order to solve the dinning philosopher problem.
+How to solve it ?
+````c
+void  think(t_philo *philo)
+{
+	display(philo, "is thinking");
+  
+  // We create a time_to_think delay, that prevent the current philo to take forks
+  // and eat directly after finishing to sleep. This way, 
+  
+	usleep(((philo->data->time_to_die - (philo->data->time_to_eat \
+	+ philo->data->time_to_sleep)) / 2) * 1000);
+}
+````
+
 ## ⚙️ How to run the project ?
 Compile using:
 ````shell
