@@ -32,9 +32,10 @@ void  think(t_philo *philo)
 {
 	display(philo, "is thinking");
   
-  // We create a time_to_think delay, that prevent the current philo to take forks
-  // and eat directly after finishing to sleep. This way, 
-  
+  	// We create a time_to_think delay, that prevent the current philo to take forks
+ 	// and eat directly after finishing to sleep.
+  	// formula: ((time_to_die - (time_to_eat + time_to_sleep)) / 2) * 1000;
+	
 	usleep(((philo->data->time_to_die - (philo->data->time_to_eat \
 	+ philo->data->time_to_sleep)) / 2) * 1000);
 }
