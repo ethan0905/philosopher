@@ -40,6 +40,7 @@ void  think(t_philo *philo)
 	+ philo->data->time_to_sleep)) / 2) * 1000);
 }
 ````
+Philosophers should now have stop to steal forks to each other :) (Drop a star if that helped you)
 
 ## ⚙️ How to run the project ?
 Compile using:
