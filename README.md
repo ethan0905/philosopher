@@ -1,5 +1,7 @@
 # philosopher 👥 [![esafar's 42 Philosophers Score](https://badge42.vercel.app/api/v2/cl6l739qg00490gialxmtgsrk/project/2464664)](https://github.com/JaeSeoKim/badge42)
 
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=ethan0905&label=philosopher%20views&color=0e75b6&style=flat" alt="jcluzet" /> </p>
+
 <p align="center"> <img width="300" height="auto" src="https://github.com/ethan0905/philosopher/blob/master/dinning_philosophers" </p>
 
 > Philosophers are sitting around a table where there is a large bowl of spaghetti in the middle. They all bring their own fork.
